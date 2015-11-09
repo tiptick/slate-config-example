@@ -27,7 +27,7 @@
         </div>
       </div>
     </div>
-
+<!----
     <div class='item-container'>
       <div class='item-container-header'>Customizability</div>
       <div class='item-container-content'>
@@ -40,17 +40,17 @@
         Choose the app's background color. Used if High Contrast Mode is not selected. Note: Only available on Basalt watches that support many colors.
       </div>
     </div>
-
+---->
     <div class='item-container'>
-      <div class='item-container-header'>Accessibility</div>
+      <div class='item-container-header'>Customizing</div>
       <div class='item-container-content'>
         <label class='item'>
-          High Contrast Mode
+          Display Date 
           <input id='high_contrast_checkbox' type='checkbox' class='item-toggle'>
         </label>
       </div>
       <div class='item-container-footer'>
-        This switches the app colors to a higher contrast set that promotes readability in low light.
+        This shows the date below the Hour
       </div>
     </div>
 
@@ -62,17 +62,17 @@
   </body>
   <script>
   function getConfigData() {
-    var backgroundColorPicker = document.getElementById('background_color_picker');
-    var highContrastCheckbox = document.getElementById('high_contrast_checkbox');
+    
+    var highContrastCheckbox = document.getElementById('date_checkbox');
  
     var options = {
-      'background_color': backgroundColorPicker.value,
-      'high_contrast': highContrastCheckbox.checked
+     // 'background_color': backgroundColorPicker.value,
+      'date': datetCheckbox.checked
     };
 
     // Save for next launch
-    localStorage['background_color'] = options['background_color'];
-    localStorage['high_contrast'] = options['high_contrast'];
+   // localStorage['background_color'] = options['background_color'];
+    localStorage['date'] = options['date'];
 
     console.log('Got options: ' + JSON.stringify(options));
     return options;
@@ -100,13 +100,13 @@
   });
 
   (function() {
-    var backgroundColorPicker = document.getElementById('background_color_picker');
-    var highContrastCheckbox = document.getElementById('high_contrast_checkbox');
+    //var backgroundColorPicker = document.getElementById('background_color_picker');
+    var dateCheckbox = document.getElementById('date_checkbox');
 
     // Load any previously saved configuration, if available
-    if(localStorage['high_contrast']) {
-      highContrastCheckbox.checked = JSON.parse(localStorage['high_contrast']);
-      backgroundColorPicker.value = localStorage['background_color'];
+    if(localStorage['date']) {
+      highContrastCheckbox.checked = JSON.parse(localStorage['date']);
+     // backgroundColorPicker.value = localStorage['background_color'];
     }
   })();
   </script>
