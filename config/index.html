@@ -54,7 +54,18 @@
         This shows the date below the Hour
       </div>
     </div>
+ <div class='item-container'>
+      <div class='item-container-header'>Connection Handling</div>
+      <div class='item-container-content'>
+        <label class='item'>
+          Vibrate on Bluetooth Dis-/Connect
+          <input id='btvib_checkbox' type='checkbox' class='item-toggle'>
+        </label>
+      </div>
+      
+    </div>
 
+   
     <div class='item-container'>
       <div class='button-container'>
         <input id='submit_button' type='button' class='item-button' value='SUBMIT'>
@@ -65,15 +76,18 @@
   function getConfigData() {
     
     var dateCheckbox = document.getElementById('date_checkbox');
- 
+    var btvib_checkbox = document.getElementById('btvib_checkbox');
+    
     var options = {
      // 'background_color': backgroundColorPicker.value,
       'date': dateCheckbox.checked
+      'btvib': btvib_checkbox.checked
     };
 
     // Save for next launch
    // localStorage['background_color'] = options['background_color'];
     localStorage['date'] = options['date'];
+    localStorage['btvib'] = options['btvib'];
 
     console.log('Got options: ' + JSON.stringify(options));
     return options;
@@ -103,10 +117,11 @@
   (function() {
     //var backgroundColorPicker = document.getElementById('background_color_picker');
     var dateCheckbox = document.getElementById('date_checkbox');
-
+    var btvib_checkbox = document.getElementById('btvib_checkbox');
     // Load any previously saved configuration, if available
     if(localStorage['date']) {
       dateCheckbox.checked = JSON.parse(localStorage['date']);
+      btvib_checkbox.checked = JSON.parse(localStorage['btvib']);
      // backgroundColorPicker.value = localStorage['background_color'];
     }
   })();
