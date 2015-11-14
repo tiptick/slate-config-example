@@ -114,18 +114,30 @@
     var moonColorPicker = document.getElementById('moon_color_picker');
     var earthFontBoldCheckbox = document.getElementById('earth_font_bold_checkbox');
     var earthFontInvertCheckbox = document.getElementById('earth_font_invert_checkbox');
+    var moonFontInvertCheckbox = document.getElementById('moon_font_invert_checkbox');
     
     var options = {
-      'background_color': backgroundColorPicker.value,
       'date': dateCheckbox.checked,
-      'btvib': btvib_checkbox.checked
+      'btvib': btvib_checkbox.checked,
+      'backgroundColor': backgroundColorPicker.value,
+      'earthColor' : earthColorPicker.value,
+      'moonColor' : moonColorPicker.value,
+      'earthFontBold' : earthFontBoldCheckbox.checked,
+      'earthFontInvert' : earthFontInvertCheckbox.checked,
+      'moonFontInvert' : moonFontInvertCheckbox.checked
     };
 
     // Save for next launch
    // localStorage['background_color'] = options['background_color'];
     localStorage['date'] = options['date'];
     localStorage['btvib'] = options['btvib'];
-
+    localStorage['backgroundColor'] = options['backgroundColor'];
+    localStorage['earthColor'] = options['earthColor'];
+    localStorage['moonColor'] = options['moonColor'];
+    localStorage['earthFontBold'] = options['earthFontBold'];
+    localStorage['earthFontInvert'] = options['earthFontInvert'];
+    localStorage['moonFontInvert'] = options['moonFontInvert'];
+    
     console.log('Got options: ' + JSON.stringify(options));
     return options;
   }
@@ -152,14 +164,26 @@
   });
 
   (function() {
-    //var backgroundColorPicker = document.getElementById('background_color_picker');
+    
     var dateCheckbox = document.getElementById('date_checkbox');
     var btvib_checkbox = document.getElementById('btvib_checkbox');
+    var backgroundColorPicker = document.getElementById('background_color_picker');
+    var earthColorPicker = document.getElementById('earth_color_picker');
+    var moonColorPicker = document.getElementById('moon_color_picker');
+    var earthFontBoldCheckbox = document.getElementById('earth_font_bold_checkbox');
+    var earthFontInvertCheckbox = document.getElementById('earth_font_invert_checkbox');
+    var moonFontInvertCheckbox = document.getElementById('moon_font_invert_checkbox');
+    
     // Load any previously saved configuration, if available
     if(localStorage['date']) {
-      dateCheckbox.checked = JSON.parse(localStorage['date']);
-      btvib_checkbox.checked = JSON.parse(localStorage['btvib']);
-     // backgroundColorPicker.value = localStorage['background_color'];
+     dateCheckbox.checked = JSON.parse(localStorage['date']);
+     btvib_checkbox.checked = JSON.parse(localStorage['btvib']);
+     backgroundColorPicker.value = JSON.parse(localStorage['backgroundColor']);
+     earthColorPicker.value = JSON.parse(localStorage['earthColor']);
+     moonColorPicker.value = JSON.parse(localStorage['moonColor']);
+     earthFontBoldCheckbox.checked = JSON.parse(localStorage['earthFontBoldCheckbox']);
+     earthFontInvertCheckbox.checked = JSON.parse(localStorage['earthFontInvertCheckbox']);
+     moonFontInvertCheckbox.checked = JSON.parse(localStorage['moonFontInvertCheckbox']);
     }
   })();
   </script>
