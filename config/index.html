@@ -186,7 +186,7 @@
     var moonFontInvertCheckbox = document.getElementById('moon_font_invert_checkbox');
     
     // Load any previously saved configuration, if available
-    if(localStorage['moonFontInvert']) {
+   // if(localStorage['moonFontInvert']) {
      dateCheckbox.checked = JSON.parse(localStorage['date']);
      btvib_checkbox.checked = JSON.parse(localStorage['btvib']);
      backgroundColorPicker.value = JSON.parse(localStorage['backgroundColor']);
@@ -195,7 +195,7 @@
      earthFontBoldCheckbox.checked = JSON.parse(localStorage['earthFontBold']);
      earthFontInvertCheckbox.checked = JSON.parse(localStorage['earthFontInvert']);
      moonFontInvertCheckbox.checked = JSON.parse(localStorage['moonFontInvert']);
-    }
+    //}
   })();
   </script>
 </html>
