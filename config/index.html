@@ -63,41 +63,31 @@
         </label>
       </div>
       
-    </div>
+  </div>
     
-     <div class='item-container'>
-      <div class='item-container-header'>x</div>
-      <div class='item-container-content'>
-         <label class='item'>
-          Bold Earth Font
-          <input id='earth_font_bold_checkbox' type='checkbox' class='item-toggle'>
-        </label>
-      </div>
-      
-    </div>
 
  <div class='item-container'>
       <div class='item-container-header'>Colors</div>
       <div class='item-container-content'>
         <label class='item'>
           Background Color
-          <input id='background_color_picker' type='text' class='item-color item-color-sunny' value='0x000000'>
+          <input id='background_color_picker' type='text' class='item-color item-color-sunny' value='000000'>
         </label>
          <label class='item'>
           Earth Color
-          <input id='earth_color_picker' type='text' class='item-color item-color-sunny' value='0x000000'>
+          <input id='earth_color_picker' type='text' class='item-color item-color-sunny' value='000000'>
         </label>
         <label class='item'>
           Invert Earths Fontcolor
           <input id='earth_font_invert_checkbox' type='checkbox' class='item-toggle'>
         </label>
-       <!--  <label class='item'>
+        <label class='item'>
           Bold Earth Font
           <input id='earth_font_bold_checkbox' type='checkbox' class='item-toggle'>
-        </label>-->
+        </label>
         <label class='item'>
           Moon Color
-          <input id='moon_color_picker' type='text' class='item-color item-color-sunny' value='0x000000'>
+          <input id='moon_color_picker' type='text' class='item-color item-color-sunny' value='000000'>
         </label>
          <label class='item'>
           Invert Moons Fontcolor
@@ -196,7 +186,7 @@
      backgroundColorPicker.value = JSON.parse(localStorage['backgroundColor']);
      earthColorPicker.value = JSON.parse(localStorage['earthColor']);
      moonColorPicker.value = JSON.parse(localStorage['moonColor']);
-    console.log('loading' +  earthFontBoldCheckbox.checked );
+    console.log("earthcolo" +  earthColorPicker.value);
     //}
   })();
   </script>
