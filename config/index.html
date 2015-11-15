@@ -81,11 +81,11 @@
       <div class='item-container-content'>
         <label class='item'>
           Background Color
-          <input id='background_color_picker' type='text' class='item-color item-color-sunny' value='000000'>
+          <input id='background_color_picker' type='text' class='item-color item-color-sunny' value='0x000000'>
         </label>
          <label class='item'>
           Earth Color
-          <input id='earth_color_picker' type='text' class='item-color item-color-sunny' value='000000'>
+          <input id='earth_color_picker' type='text' class='item-color item-color-sunny' value='0x000000'>
         </label>
         <label class='item'>
           Invert Earths Fontcolor
@@ -97,7 +97,7 @@
         </label>-->
         <label class='item'>
           Moon Color
-          <input id='moon_color_picker' type='text' class='item-color item-color-sunny' value='000000'>
+          <input id='moon_color_picker' type='text' class='item-color item-color-sunny' value='0x000000'>
         </label>
          <label class='item'>
           Invert Moons Fontcolor
@@ -120,22 +120,22 @@
     
     var dateCheckbox = document.getElementById('date_checkbox');
     var btvib_checkbox = document.getElementById('btvib_checkbox');
-    var backgroundColor = document.getElementById('background_color_picker');
-    var earthColor = document.getElementById('earth_color_picker');
-    var moonColor = document.getElementById('moon_color_picker');
-    var earthFontBold = document.getElementById('earth_font_bold_checkbox');
-    var earthFontInvert = document.getElementById('earth_font_invert_checkbox');
-    var moonFontInvert = document.getElementById('moon_font_invert_checkbox');
+    var backgroundColorPicker = document.getElementById('background_color_picker');
+    var earthColorPicker = document.getElementById('earth_color_picker');
+    var moonColorPicker = document.getElementById('moon_color_picker');
+    var earthFontBoldCheckbox = document.getElementById('earth_font_bold_checkbox');
+    var earthFontInvertCheckbox = document.getElementById('earth_font_invert_checkbox');
+    var moonFontInvertCheckbox = document.getElementById('moon_font_invert_checkbox');
     
     var options = {
       'date': dateCheckbox.checked,
       'btvib': btvib_checkbox.checked,
-      'backgroundColor': backgroundColor.value,
-      'earthColor' : earthColor.value,
-      'moonColor' : moonColor.value,
-      'earthFontBold' : earthFontBold.checked,
-      'earthFontInvert' : earthFontInvert.checked,
-      'moonFontInvert' : moonFontInvert.checked
+      'backgroundColor': backgroundColorPicker.value,
+      'earthColor': earthColorPicker.value,
+      'moonColor': moonColorPicker.value,
+      'earthFontBold': earthFontBoldCheckbox.checked,
+      'earthFontInvert': earthFontInvertCheckbox.checked,
+      'moonFontInvert': moonFontInvertCheckbox.checked
     };
 
     // Save for next launch
