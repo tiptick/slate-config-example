@@ -192,21 +192,20 @@
    
     
     // Load any previously saved configuration, if available
-   // if(localStorage['moonFontInvert']) {
+    if(localStorage['moonFontInvert']) {
      dateCheckbox.checked = JSON.parse(localStorage['date']);
      btvib_checkbox.checked = JSON.parse(localStorage['btvib']);
      earthFontBoldCheckbox.checked = JSON.parse(localStorage['earthFontBold']);
      earthFontInvertCheckbox.checked = JSON.parse(localStorage['earthFontInvert']);
      moonFontInvertCheckbox.checked = JSON.parse(localStorage['moonFontInvert']);
-     backgroundColorPicker.value = JSON.parse(localStorage['backgroundColor']);
-     earthorbitinvert.checked = JSON.parse(localStorage['earthOrbitInvert']);
+       earthorbitinvert.checked = JSON.parse(localStorage['earthOrbitInvert']);
       moonorbitinvert.checked = JSON.parse(localStorage['moonOrbitInvert']);
-      
+     backgroundColorPicker.value = JSON.parse(localStorage['backgroundColor']);    
      earthColorPicker.value = JSON.parse(localStorage['earthColor']);
      moonColorPicker.value = JSON.parse(localStorage['moonColor']);
       
-    console.log("earthcolo" +  earthColorPicker.value);
-    //}
+    console.log("earthcolo" +  earthColorPicker.value); 
+  }
   })();
   </script>
 </html>
