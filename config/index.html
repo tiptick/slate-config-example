@@ -93,6 +93,14 @@
           Invert Moons Fontcolor
           <input id='moon_font_invert_checkbox' type='checkbox' class='item-toggle'>
         </label>
+        <label class='item'>
+          Invert Moons Orbit
+          <input id='moon_orbit_invert_checkbox' type='checkbox' class='item-toggle'>
+        </label>
+        <label class='item'>
+          Invert Earths Orbit
+          <input id='earth_orbit_invert_checkbox' type='checkbox' class='item-toggle'>
+        </label>
       </div>
       <div class='item-container-footer'>
         Color up you Planets
@@ -116,6 +124,8 @@
     var earthFontBoldCheckbox = document.getElementById('earth_font_bold_checkbox');
     var earthFontInvertCheckbox = document.getElementById('earth_font_invert_checkbox');
     var moonFontInvertCheckbox = document.getElementById('moon_font_invert_checkbox');
+    var moonorbitinvertcheckbox = document.getElementById('moon_orbit_invert_checkbox');
+    var earthorbitinvertcheckbox = document.getElementById('earth_orbit_invert_checkbox');
     
     var options = {
       'date': dateCheckbox.checked,
@@ -125,7 +135,9 @@
       'moonColor': moonColorPicker.value,
       'earthFontBold': earthFontBoldCheckbox.checked,
       'earthFontInvert': earthFontInvertCheckbox.checked,
-      'moonFontInvert': moonFontInvertCheckbox.checked
+      'moonFontInvert': moonFontInvertCheckbox.checked,
+      'earthOrbitInvert': earthorbitinvertcheckbox.checked,
+      'moonOrbitInvert': moonorbitinvertcheckbox.checked
     };
 
     // Save for next launch
@@ -138,7 +150,8 @@
     localStorage['earthFontBold'] = options['earthFontBold'];
     localStorage['earthFontInvert'] = options['earthFontInvert'];
     localStorage['moonFontInvert'] = options['moonFontInvert'];
-    
+    localStorage['earthOrbitInvert'] = options['earthOrbitInvert'];
+    localStorage['moonOrbitInvert'] = options['moonOrbitInvert']
     console.log('Got options: ' + JSON.stringify(options));
     return options;
   }
@@ -174,7 +187,8 @@
     var backgroundColorPicker = document.getElementById('background_color_picker');
     var earthColorPicker = document.getElementById('earth_color_picker');
     var moonColorPicker = document.getElementById('moon_color_picker');
-   
+    var earthorbitinvert = document.getElementById('earth_orbit_invert_checkbox');
+    var moonorbitinvert = document.getElementById('moon_orbit_invert_checkbox');
     
     // Load any previously saved configuration, if available
    // if(localStorage['moonFontInvert']) {
@@ -186,6 +200,9 @@
      backgroundColorPicker.value = JSON.parse(localStorage['backgroundColor']);
      earthColorPicker.value = JSON.parse(localStorage['earthColor']);
      moonColorPicker.value = JSON.parse(localStorage['moonColor']);
+      earthorbitinvert.checked = JSON.parse(localStorage['earthOrbitInvert']);
+      moonorbitinvert.checked = JSON.parse(localStorage['moonOrbitInvert']);
+      
     console.log("earthcolo" +  earthColorPicker.value);
     //}
   })();
