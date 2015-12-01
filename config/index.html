@@ -184,11 +184,12 @@
     var earthFontBoldCheckbox = document.getElementById('earth_font_bold_checkbox');
     var earthFontInvertCheckbox = document.getElementById('earth_font_invert_checkbox');
     var moonFontInvertCheckbox = document.getElementById('moon_font_invert_checkbox');
+    var earthorbitinvert = document.getElementById('earth_orbit_invert_checkbox');
+    var moonorbitinvert = document.getElementById('moon_orbit_invert_checkbox');
     var backgroundColorPicker = document.getElementById('background_color_picker');
     var earthColorPicker = document.getElementById('earth_color_picker');
     var moonColorPicker = document.getElementById('moon_color_picker');
-    var earthorbitinvert = document.getElementById('earth_orbit_invert_checkbox');
-    var moonorbitinvert = document.getElementById('moon_orbit_invert_checkbox');
+   
     
     // Load any previously saved configuration, if available
    // if(localStorage['moonFontInvert']) {
@@ -198,10 +199,11 @@
      earthFontInvertCheckbox.checked = JSON.parse(localStorage['earthFontInvert']);
      moonFontInvertCheckbox.checked = JSON.parse(localStorage['moonFontInvert']);
      backgroundColorPicker.value = JSON.parse(localStorage['backgroundColor']);
+     earthorbitinvert.checked = JSON.parse(localStorage['earthOrbitInvert']);
+      moonorbitinvert.checked = JSON.parse(localStorage['moonOrbitInvert']);
+      
      earthColorPicker.value = JSON.parse(localStorage['earthColor']);
      moonColorPicker.value = JSON.parse(localStorage['moonColor']);
-      earthorbitinvert.checked = JSON.parse(localStorage['earthOrbitInvert']);
-      moonorbitinvert.checked = JSON.parse(localStorage['moonOrbitInvert']);
       
     console.log("earthcolo" +  earthColorPicker.value);
     //}
